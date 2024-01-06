@@ -1,0 +1,14 @@
+[tool.poetry]
+authors = ["Laurens van der Tas <laurens.vandertas@gmail.com>"]
+description = ""
+name = "mkdocs-testing"
+packages = [{include = "mkdocs_testing", from = "src"}]
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
