@@ -1,13 +1,25 @@
 [tool.poetry]
 authors = ["Laurens van der Tas <laurens.vandertas@gmail.com>"]
 description = ""
+include = ["src/docs"]
 name = "mkdocs-testing"
-packages = [{include = "mkdocs_testing", from = "src"}]
+packages = [
+  {include = "mkdocs_testing", from = "src"},
+]
 readme = "README.md"
 version = "0.1.0"
 
+[tool.poetry.scripts]
+serve = "src.lib.mkdocs:serve"
+
 [tool.poetry.dependencies]
+mkdocs-material = "^9.5.3"
+mkdocstrings = "^0.24.0"
 python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.28.0"
+ipywidgets = "^8.1.1"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
