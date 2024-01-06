@@ -11,6 +11,8 @@ version = "0.1.0"
 
 [tool.poetry.scripts]
 build = "src.lib.mkdocs:build"
+precommit-install = "src.lib.precommit:install"
+precommit-run = "src.lib.precommit:run"
 serve = "src.lib.mkdocs:serve"
 
 [tool.poetry.dependencies]
@@ -21,6 +23,7 @@ python = "^3.11"
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.28.0"
 ipywidgets = "^8.1.1"
+pre-commit = "^3.6.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.4"
