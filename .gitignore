@@ -1,4 +1,8 @@
+# Caches
 __pycache__/
 .venv/
+.pytest_cache/
 
+# Builds
 dist/
+site/
