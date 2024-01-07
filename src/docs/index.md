@@ -1,17 +1,40 @@
-# Welcome to MkDocs
-
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+# MkDocs + MkDocstrings
 
 ## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+```bash
+tree -aL 2 --gitignore
+
+.
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── .pre-commit-config.yaml
+├── .venv
+├── .vscode
+│   └── settings.json
+├── README.md
+├── dist
+├── poetry.lock
+├── pyproject.toml
+├── site
+└── src
+    ├── docs
+    │   └── index.md
+    ├── lib
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   ├── factory.py
+    │   ├── mkdocs.py
+    │   ├── precommit.py
+    │   └── test_class.py
+    ├── mkdocs.yml
+    ├── mkdocs_testing
+    │   └── __init__.py
+    └── templates
+        └── .gitkeep
+```
+
+## External: `installer.records`
+
+See [installer.records][] to learn about records.

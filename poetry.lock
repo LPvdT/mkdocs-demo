@@ -367,6 +367,20 @@ python-dateutil = ">=2.8.1"
 dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
+name = "griffe"
+version = "0.38.1"
+description = "Signatures for entire Python programs. Extract the structure, the frame, the skeleton of your project, to generate API documentation or find breaking changes in your API."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "griffe-0.38.1-py3-none-any.whl", hash = "sha256:334c79d3b5964ade65c05dfcaf53518c576dedd387aaba5c9fd71212f34f1483"},
+    {file = "griffe-0.38.1.tar.gz", hash = "sha256:bd68d7da7f3d87bc57eb9962b250db123efd9bbcc06c11c1a91b6e583b2a9361"},
+]
+
+[package.dependencies]
+colorama = ">=0.4"
+
+[[package]]
 name = "identify"
 version = "2.5.33"
 description = "File identification library for Python"
@@ -735,6 +749,34 @@ Markdown = ">=3.3"
 mkdocs = ">=1.1"
 
 [[package]]
+name = "mkdocs-gen-files"
+version = "0.5.0"
+description = "MkDocs plugin to programmatically generate documentation pages during the build"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mkdocs_gen_files-0.5.0-py3-none-any.whl", hash = "sha256:7ac060096f3f40bd19039e7277dd3050be9a453c8ac578645844d4d91d7978ea"},
+    {file = "mkdocs_gen_files-0.5.0.tar.gz", hash = "sha256:4c7cf256b5d67062a788f6b1d035e157fc1a9498c2399be9af5257d4ff4d19bc"},
+]
+
+[package.dependencies]
+mkdocs = ">=1.0.3"
+
+[[package]]
+name = "mkdocs-literate-nav"
+version = "0.6.1"
+description = "MkDocs plugin to specify the navigation in Markdown instead of YAML"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mkdocs_literate_nav-0.6.1-py3-none-any.whl", hash = "sha256:e70bdc4a07050d32da79c0b697bd88e9a104cf3294282e9cb20eec94c6b0f401"},
+    {file = "mkdocs_literate_nav-0.6.1.tar.gz", hash = "sha256:78a7ab6d878371728acb0cdc6235c9b0ffc6e83c997b037f4a5c6ff7cef7d759"},
+]
+
+[package.dependencies]
+mkdocs = ">=1.0.3"
+
+[[package]]
 name = "mkdocs-material"
 version = "9.5.3"
 description = "Documentation that simply works"
@@ -775,6 +817,20 @@ files = [
 ]
 
 [[package]]
+name = "mkdocs-section-index"
+version = "0.3.8"
+description = "MkDocs plugin to allow clickable sections that lead to an index page"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mkdocs_section_index-0.3.8-py3-none-any.whl", hash = "sha256:823d298d78bc1e73e23678ff60889f3c369c2167b03dba73fea88bd0e268a60d"},
+    {file = "mkdocs_section_index-0.3.8.tar.gz", hash = "sha256:bbd209f0da79441baf136ef3a9c40665bb9681d1fb62c73ca2f116fd1388a404"},
+]
+
+[package.dependencies]
+mkdocs = ">=1.2"
+
+[[package]]
 name = "mkdocstrings"
 version = "0.24.0"
 description = "Automatic documentation from sources, for MkDocs."
@@ -792,6 +848,7 @@ Markdown = ">=3.3"
 MarkupSafe = ">=1.1"
 mkdocs = ">=1.4"
 mkdocs-autorefs = ">=0.3.1"
+mkdocstrings-python = {version = ">=0.5.2", optional = true, markers = "extra == \"python\""}
 platformdirs = ">=2.2.0"
 pymdown-extensions = ">=6.3"
 
@@ -799,6 +856,21 @@ pymdown-extensions = ">=6.3"
 crystal = ["mkdocstrings-crystal (>=0.3.4)"]
 python = ["mkdocstrings-python (>=0.5.2)"]
 python-legacy = ["mkdocstrings-python-legacy (>=0.2.1)"]
+
+[[package]]
+name = "mkdocstrings-python"
+version = "1.7.5"
+description = "A Python handler for mkdocstrings."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mkdocstrings_python-1.7.5-py3-none-any.whl", hash = "sha256:5f6246026353f0c0785135db70c3fe9a5d9318990fc7ceb11d62097b8ffdd704"},
+    {file = "mkdocstrings_python-1.7.5.tar.gz", hash = "sha256:c7d143728257dbf1aa550446555a554b760dcd40a763f077189d298502b800be"},
+]
+
+[package.dependencies]
+griffe = ">=0.37"
+mkdocstrings = ">=0.20"
 
 [[package]]
 name = "nest-asyncio"
@@ -1584,4 +1656,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "bf593edcb37fa8752a4e4ce5fd1757d66dc84358b2a4684667e12738df28faad"
+content-hash = "4c86ea7f1b0dd4932712207948d2b26e8d1bf956a17d09ef3ea217b9f827caa3"
