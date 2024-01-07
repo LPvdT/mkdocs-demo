@@ -1,12 +1,13 @@
 [tool.poetry]
 authors = ["Laurens van der Tas <laurens.vandertas@gmail.com>"]
 description = ""
-include = ["src/docs"]
+include = ["src/docs", "src/templates", "src/mkdocs.yml"]
 name = "mkdocs-testing"
 packages = [
   {include = "mkdocs_testing", from = "src"},
+  {include = "lib", from = "src"},
 ]
-readme = "README.md"
+readme = "TODO.md"
 version = "0.1.0"
 
 [tool.poetry.scripts]
@@ -16,12 +17,12 @@ precommit-run = "src.lib.precommit:run"
 serve = "src.lib.mkdocs:serve"
 
 [tool.poetry.dependencies]
-mkdocs-material = "^9.5.3"
-mkdocstrings = {extras = ["python"], version = "^0.24.0"}
-python = "^3.11"
 mkdocs-gen-files = "^0.5.0"
 mkdocs-literate-nav = "^0.6.1"
+mkdocs-material = "^9.5.3"
 mkdocs-section-index = "^0.3.8"
+mkdocstrings = {extras = ["python"], version = "^0.24.0"}
+python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.28.0"
