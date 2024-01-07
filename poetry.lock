@@ -417,6 +417,17 @@ files = [
 ]
 
 [[package]]
+name = "install"
+version = "1.3.5"
+description = "Install packages from within code"
+optional = false
+python-versions = ">=2.7, >=3.5"
+files = [
+    {file = "install-1.3.5-py3-none-any.whl", hash = "sha256:0d3fadf4aa62c95efe8d34757c8507eb46177f86c016c21c6551eafc6a53d5a9"},
+    {file = "install-1.3.5.tar.gz", hash = "sha256:e67c8a0be5ccf8cb4ffa17d090f3a61b6e820e6a7e21cd1d2c0f7bc59b18e647"},
+]
+
+[[package]]
 name = "ipykernel"
 version = "6.28.0"
 description = "IPython Kernel for Jupyter"
@@ -608,6 +619,24 @@ files = [
 [package.extras]
 docs = ["mdx-gh-links (>=0.2)", "mkdocs (>=1.5)", "mkdocs-gen-files", "mkdocs-literate-nav", "mkdocs-nature (>=0.6)", "mkdocs-section-index", "mkdocstrings[python]"]
 testing = ["coverage", "pyyaml"]
+
+[[package]]
+name = "markdown-exec"
+version = "1.8.0"
+description = "Utilities to execute code blocks in Markdown files."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "markdown_exec-1.8.0-py3-none-any.whl", hash = "sha256:e80cb766eff8d0bcd1cdd133dba58223b42edbd1b7b9672481c2189572401bff"},
+    {file = "markdown_exec-1.8.0.tar.gz", hash = "sha256:0a932312f0ca89b82150e1638e84febb90eadd410dfd2417f05759c06deed727"},
+]
+
+[package.dependencies]
+pygments-ansi-color = {version = "*", optional = true, markers = "extra == \"ansi\""}
+pymdown-extensions = ">=9"
+
+[package.extras]
+ansi = ["pygments-ansi-color"]
 
 [[package]]
 name = "markupsafe"
@@ -1098,6 +1127,20 @@ files = [
 [package.extras]
 plugins = ["importlib-metadata"]
 windows-terminal = ["colorama (>=0.4.6)"]
+
+[[package]]
+name = "pygments-ansi-color"
+version = "0.3.0"
+description = ""
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "pygments-ansi-color-0.3.0.tar.gz", hash = "sha256:7018954cf5b11d1e734383a1bafab5af613213f246109417fee3f76da26d5431"},
+    {file = "pygments_ansi_color-0.3.0-py3-none-any.whl", hash = "sha256:7eb063feaecadad9d4d1fd3474cbfeadf3486b64f760a8f2a00fc25392180aba"},
+]
+
+[package.dependencies]
+pygments = "!=2.7.3"
 
 [[package]]
 name = "pymdown-extensions"
@@ -1656,4 +1699,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "4c86ea7f1b0dd4932712207948d2b26e8d1bf956a17d09ef3ea217b9f827caa3"
+content-hash = "fd805bcddcc3acd9a02167df219ff98a89e6edfccf379c234aee2d1f7c949c73"
