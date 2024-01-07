@@ -3,6 +3,12 @@ site_name: My Docs
 theme:
   name: material
 
+nav:
+  - index.md
+  - Code Reference:
+      - reference/index.md
+      - Reference: reference/
+
 markdown_extensions:
   - pymdownx.highlight
 
@@ -12,6 +18,9 @@ plugins:
   - gen-files:
       scripts:
         - lib/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - section-index
   - mkdocstrings:
       enabled: true
       custom_templates: templates
