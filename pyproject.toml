@@ -20,6 +20,8 @@ mkdocs-material = "^9.5.3"
 mkdocstrings = {extras = ["python"], version = "^0.24.0"}
 python = "^3.11"
 mkdocs-gen-files = "^0.5.0"
+mkdocs-literate-nav = "^0.6.1"
+mkdocs-section-index = "^0.3.8"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.28.0"
