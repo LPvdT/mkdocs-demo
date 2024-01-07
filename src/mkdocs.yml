@@ -1,3 +1,53 @@
 site_name: My Docs
+
 theme:
   name: material
+
+markdown_extensions:
+  - pymdownx.highlight
+
+plugins:
+  - search
+  - autorefs
+  - gen-files:
+      scripts:
+        - lib/gen_ref_pages.py
+  - mkdocstrings:
+      enabled: true
+      custom_templates: templates
+      default_handler: python
+      enable_inventory: true
+      handlers:
+        python:
+          import:
+            - https://installer.readthedocs.io/en/stable/objects.inv
+          load_external_modules: true
+          options:
+            show_root_heading: true
+            show_root_toc_entry: true
+            show_root_full_path: false
+            show_root_members_full_path: false
+            show_object_full_path: false
+            show_category_heading: true
+            show_if_no_docstring: true
+            show_signature: true
+            show_signature_annotations: true
+            separate_signature: false
+            line_length: 60
+            merge_init_into_class: true
+            show_docstring_attributes: true
+            show_docstring_description: true
+            show_docstring_examples: true
+            show_docstring_other_parameters: true
+            show_docstring_parameters: true
+            show_docstring_raises: true
+            show_docstring_receives: true
+            show_docstring_returns: true
+            show_docstring_warns: true
+            show_docstring_yields: true
+            show_source: true
+            show_bases: true
+            show_submodules: false
+            group_by_category: true
+            heading_level: 5
+            members: null
