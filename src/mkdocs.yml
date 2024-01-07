@@ -1,17 +1,29 @@
+###########
+# General #
+###########
 site_name: My Docs
 
 theme:
   name: material
 
+##############
+# Navigation #
+##############
 nav:
   - index.md
   - Code Reference:
       - reference/index.md
       - Reference: reference/
 
+#######################
+# Markdown Extensions #
+#######################
 markdown_extensions:
   - pymdownx.highlight
 
+###########
+# Plugins #
+###########
 plugins:
   - search
   - autorefs
