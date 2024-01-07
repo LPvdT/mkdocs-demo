@@ -1,31 +1,114 @@
-###########
-# General #
-###########
-site_name: My Docs
+########
+# Site #
+########
 
-theme:
-  name: material
+site_name: MkDocs + MkDocstrings Testing
+site_description: Automatic documentation from sources, using MkDocs Material.
+# site_url: ...
+# repo_url: ...
+# repo_name: ...
+site_dir: ../site
+copyright: Copyright &copy; 2024 Laurens van der Tas
+watch:
+  - docs/
+  - lib/
+  - mkdocs_testing/
+  - templates/
+  - mkdocs.yml
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
 
 ##############
 # Navigation #
 ##############
+
 nav:
-  - index.md
-  - Code Reference:
-      - reference/index.md
-      - Reference: reference/
+  - Home:
+      - Overview: index.md
+  - API Reference:
+      - Lib: reference/
+
+#########
+# Theme #
+#########
+
+theme:
+  name: material
+  # logo: logo.svg
+  # custom_dir: docs/.overrides
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      # primary: teal
+      # accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      # primary: black
+      # accent: lime
+      toggle:
+        icon: material/weather-night
+        name: Switch to system preference
 
 #######################
 # Markdown Extensions #
 #######################
 markdown_extensions:
-  - pymdownx.highlight
+  - attr_list
+  - admonition
+  - footnotes
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.magiclink
+  - pymdownx.snippets:
+      base_path: [!relative $config_dir]
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - toc:
+      permalink: "¤"
 
 ###########
 # Plugins #
 ###########
 plugins:
   - search
+  - markdown-exec:
+      ansi: required
   - autorefs
   - gen-files:
       scripts:
@@ -34,7 +117,7 @@ plugins:
       nav_file: SUMMARY.md
   - section-index
   - mkdocstrings:
-      enabled: true
+      enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
       custom_templates: templates
       default_handler: python
       enable_inventory: true
