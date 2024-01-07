@@ -1,6 +1,6 @@
 [tool.poetry]
 authors = ["Laurens van der Tas <laurens.vandertas@gmail.com>"]
-description = ""
+description = "Automatic documentation from sources, using MkDocstrings with MkDocs Material."
 include = ["src/docs", "src/templates", "src/mkdocs.yml"]
 name = "mkdocs-testing"
 packages = [
@@ -8,7 +8,7 @@ packages = [
   {include = "lib", from = "src"},
 ]
 readme = "TODO.md"
-version = "0.1.0"
+version = "0.5.0"
 
 [tool.poetry.scripts]
 build = "src.lib.mkdocs:build"
