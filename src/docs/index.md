@@ -1,15 +1,10 @@
-# Welcome to MkDocs
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+# MkDocs + MkDocstrings
 
 ## Project layout
 
-```shell
+```bash
+tree -aL 2 --gitignore
+
 .
 ├── .editorconfig
 ├── .gitattributes
@@ -39,12 +34,6 @@
     └── templates
         └── .gitkeep
 ```
-
-## Reference
-
-::: src.lib.factory.factory
-
-::: src.lib.test_class.TestClass
 
 ## External: `installer.records`
 
