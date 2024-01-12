@@ -1,4 +1,10 @@
-# To do
+# Tasks
+
+- [Tasks](#tasks)
+  - [Open](#open)
+  - [Closed](#closed)
+
+## Open
 
 + [ ] Structure code:
   + Do not only use `lib/`.
@@ -18,7 +24,7 @@
   └── SUMMARY.html
   ```
 
-# Done
+## Closed
 
 + [x] [Basic mkdocs Material](https://squidfunk.github.io/mkdocs-material/creating-your-site/#minimal-configuration-visual-studio-code)
 + [x] [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings/tree/main)
