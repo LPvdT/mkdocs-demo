@@ -1,3 +1,5 @@
+"""This module generates script entrypoints for Poetry related to MkDocs."""
+
 from lib.factory import factory
 
 serve = factory(cmd="mkdocs serve --config-file src/mkdocs.yml")

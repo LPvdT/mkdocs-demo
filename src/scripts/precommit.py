@@ -1,3 +1,5 @@
+"""This module generates script entrypoints for Poetry related to pre-commit."""
+
 from lib.factory import factory
 
 install = factory(cmd="pre-commit install")

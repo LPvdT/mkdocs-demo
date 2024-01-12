@@ -6,14 +6,14 @@ repos:
         args: ["--unsafe"]
       - id: end-of-file-fixer
       - id: trailing-whitespace
+
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    # Ruff
     rev: v0.1.11
     hooks:
-      # Lint
       - id: ruff
+        name: Ruff Linter
         types_or: [python, pyi, jupyter]
         args: [--fix]
-      # Format
       - id: ruff-format
+        name: Ruff Formatter
         types_or: [python, pyi, jupyter]

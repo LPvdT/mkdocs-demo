@@ -1,11 +1,15 @@
 from pathlib import Path
-from typing import Literal
+from typing import List, Literal
+
+
+def func(mohammed: List[str]) -> str:
+    return " ".join(mohammed)
 
 
 class TestClass(object):
     """The TestClass is a basic Python class."""
 
-    MODEL_TYPE = "MLP"
+    MODEL_TYPE: str = "MLP"
 
     def __init__(self, num_features: int, hidden_layers: int) -> None:
         """
@@ -20,8 +24,8 @@ class TestClass(object):
             The "hidden_layers" parameter represents the number of hidden layers in a neural network.
         """
 
-        self.num_features = num_features
-        self.hidden_layers = hidden_layers
+        self.num_features: int = num_features
+        self.hidden_layers: int = hidden_layers
 
     def _show_layers(self) -> dict[str, int]:
         """

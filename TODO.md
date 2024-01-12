@@ -5,7 +5,18 @@
   + Add some more code to generate documentation from.
 + [ ] Do some [site configuration](https://squidfunk.github.io/mkdocs-material/creating-your-site/).
 + [ ] CI/CD with `GitHub Actions`.
-+ [ ] Eventually use `Makefile` instead of `Poetry` jankyscripts.
++ [ ] Eventually use `Makefile` instead of janky `Poetry` scripts.
++ [ ] Ideally you want the following output structure for `reference/`:
+  ```shell
+  site/reference/
+  ├── main_package/
+  │   ├── constants/
+  │   ├── lib/
+  │   ├── mkdocs_testing/
+  │   ├── scripts/
+  │   └── index.html
+  └── SUMMARY.html
+  ```
 
 # Done
 
