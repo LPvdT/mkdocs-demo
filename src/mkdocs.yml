@@ -10,9 +10,11 @@ site_description: Automatic documentation from sources, using MkDocstrings with 
 site_dir: ../site
 copyright: Copyright &copy; 2024 Laurens van der Tas
 watch:
+  - constants/
   - docs/
   - lib/
   - mkdocs_testing/
+  - scripts/
   - templates/
   - mkdocs.yml
 
@@ -28,8 +30,8 @@ validation:
 nav:
   - Home:
       - Overview: index.md
-  - API Reference:
-      - Lib: reference/
+  - Reference:
+      - API: reference/
 
 #########
 # Theme #
@@ -38,7 +40,7 @@ nav:
 theme:
   name: material
   # logo: logo.svg
-  # custom_dir: docs/.overrides
+  custom_dir: docs/.overrides
   features:
     - announce.dismiss
     - content.action.edit
@@ -62,25 +64,31 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      # primary: teal
-      # accent: purple
+      primary: teal
+      accent: purple
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      # primary: black
-      # accent: lime
+      primary: black
+      accent: lime
       toggle:
         icon: material/weather-night
         name: Switch to system preference
 
+extra_css:
+  - css/mkdocstrings.css
+  - css/style.css
+
 #######################
 # Markdown Extensions #
 #######################
+
 markdown_extensions:
   - attr_list
   - admonition
+  - callouts
   - footnotes
   - pymdownx.details
   - pymdownx.emoji:
@@ -105,26 +113,30 @@ markdown_extensions:
 ###########
 # Plugins #
 ###########
+
 plugins:
+  - offline:
+      enabled: !ENV [OFFLINE, false]
+  - autorefs
   - search
   - markdown-exec:
       ansi: required
-  - autorefs
   - gen-files:
       scripts:
-        - lib/gen_ref_pages.py
+        - scripts/gen_ref_pages.py
   - literate-nav:
       nav_file: SUMMARY.md
-  - section-index
   - mkdocstrings:
       enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
-      custom_templates: templates
-      default_handler: python
-      enable_inventory: true
+      # custom_templates: templates
+      # default_handler: python
+      # enable_inventory: true
       handlers:
         python:
           import:
+            - https://docs.python.org/3/objects.inv
             - https://installer.readthedocs.io/en/stable/objects.inv
+            - https://mkdocstrings.github.io/autorefs/objects.inv
           paths: [src]
           options:
             docstring_options:
@@ -133,7 +145,7 @@ plugins:
             filters: ["!^_"]
             heading_level: 1
             inherited_members: true
-            merge_init_into_class: true
+            merge_init_into_class: false
             separate_signature: true
             show_root_heading: true
             show_root_full_path: true
@@ -142,6 +154,21 @@ plugins:
             show_symbol_type_toc: true
             signature_crossrefs: true
             summary: true
-            # show_submodules: true
+            show_submodules: true
             group_by_category: true
             show_if_no_docstring: true
+  - minify:
+      minify_html: !ENV [DEPLOY, false]
+
+#########
+# EXTRA #
+#########
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/LPvdT
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/lpvdt/
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/mkdocstrings/
