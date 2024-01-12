@@ -42,7 +42,7 @@ class TestClass(object):
             "hidden_layers": self.hidden_layers,
         }
 
-    def show_model(self) -> dict[str, str]:
+    def show_model(self) -> dict[str, str | int]:
         """
         The method `show_model` returns a dictionary containing the model type and information about
         its layers.
@@ -52,7 +52,7 @@ class TestClass(object):
         A dictionary containing the model type and the layers of the model.
         """
 
-        model_dict = {"model_type": self.MODEL_TYPE}
+        model_dict: dict[str, str | int] = {"model_type": self.MODEL_TYPE}
         model_dict.update(self._show_layers())
 
         return model_dict

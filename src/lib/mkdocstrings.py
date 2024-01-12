@@ -4,7 +4,7 @@ import mkdocs_gen_files
 from constants.config import RefGenConfig
 
 
-def gen_ref_pages(config: RefGenConfig) -> None:
+def gen_ref_pages(config: type[RefGenConfig]) -> None:
     """
     The `gen_ref_pages` function generates reference pages for Python modules
     and creates a navigation structure for them.
