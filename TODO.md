@@ -6,16 +6,17 @@
 
 ## Open
 
-+ [ ] Structure code:
-  + [x] Do not only use `lib/`.
-  + [ ] Add some more code to generate documentation from.
 + [ ] Do additional [site configuration](https://squidfunk.github.io/mkdocs-material/creating-your-site/).
 + [ ] CI/CD with `GitHub Actions`.
-+ [ ] Write tests.
 + [ ] Include `Makefile` alternative, instead of janky `Poetry` scripts.
 
 ## Closed
 
++ [x] Write tests.
+  + Could include some more, but not really the point of the project.
++ [x] Structure code:
+  + [x] Do not only use `lib/`.
+  + [x] Add some more code to generate documentation from.
 + [x] [Basic mkdocs Material](https://squidfunk.github.io/mkdocs-material/creating-your-site/#minimal-configuration-visual-studio-code)
 + [x] [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings/tree/main)
 + [x] Refactor lib scripts to make use of a factory (e.g. pass command and create new func).
