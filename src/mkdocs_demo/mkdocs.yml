@@ -7,16 +7,8 @@ site_description: Automatic documentation from sources, using MkDocstrings with 
 # site_url: ...
 # repo_url: ...
 # repo_name: ...
-site_dir: ../site
+site_dir: ../../site
 copyright: Copyright &copy; 2024 Laurens van der Tas
-watch:
-  - constants/
-  - docs/
-  - lib/
-  - mkdocs_testing/
-  - scripts/
-  - templates/
-  - mkdocs.yml
 
 validation:
   omitted_files: warn
@@ -30,8 +22,7 @@ validation:
 nav:
   - Home:
       - Overview: index.md
-  - Reference:
-      - API: reference/
+  - API Reference: reference/
 
 #########
 # Theme #

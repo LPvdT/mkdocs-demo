@@ -2,7 +2,7 @@ import subprocess
 from typing import Callable
 
 
-def factory(cmd: str) -> Callable[..., int | None]:
+def command_factory(cmd: str) -> Callable[..., int | None]:
     """
     The `factory` function takes a command as input and returns a function that, when called, executes
     the command and returns the exit code or None if the execution is interrupted.
