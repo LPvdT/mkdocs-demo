@@ -3,7 +3,8 @@ repos:
     rev: v4.5.0
     hooks:
       - id: check-yaml
-        args: [--unsafe]
+        args:
+          - --unsafe
       - id: end-of-file-fixer
       - id: trailing-whitespace
 
@@ -12,12 +13,18 @@ repos:
     hooks:
       - id: ruff
         name: Ruff Linter
-        types_or: [python, pyi, jupyter]
+        types_or:
+          - python
+          - pyi
+          - jupyter
         args:
           - --fix
       - id: ruff-format
         name: Ruff Formatter
-        types_or: [python, pyi, jupyter]
+        types_or:
+          - python
+          - pyi
+          - jupyter
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.8.0
