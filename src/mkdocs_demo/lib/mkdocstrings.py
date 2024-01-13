@@ -1,7 +1,8 @@
 from pathlib import Path
 
 import mkdocs_gen_files
-from constants.config import RefGenConfig
+
+from mkdocs_demo.constants.config import RefGenConfig
 
 
 def gen_ref_pages(config: type[RefGenConfig]) -> None:
@@ -11,7 +12,7 @@ def gen_ref_pages(config: type[RefGenConfig]) -> None:
     """
 
     nav = mkdocs_gen_files.Nav()
-    src = Path(__file__).parent.parent
+    src = Path(__file__).parent.parent.parent
 
     # Get paths for the give language handler
     for path in sorted(src.rglob(config.handler.value)):
