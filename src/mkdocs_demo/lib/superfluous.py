@@ -1,9 +1,27 @@
+"""This module contains additional trivial filler code."""
+
 from pathlib import Path
-from typing import List, Literal
+from typing import Literal
+
+from mkdocs_demo.config.interfaces import ITrolling
 
 
-def func(mohammed: List[str]) -> str:
-    return " ".join(mohammed)
+class Trolling(ITrolling):
+    """The class Trolling implements the ITrolling interface."""
+
+    def __init__(self, x: float, n: int) -> None:
+        self.x = x
+        self.n = n
+
+    @property
+    def multiple(self) -> float:
+        return self.x * self.n
+
+    def __str__(self) -> str:
+        return f"""x={self.x}, n={self.n}, hence the multiple={self.multiple}"""
+
+    def __repr__(self) -> str:
+        return f"""{self.x} * {self.n} = {self.multiple}"""
 
 
 class TestClass(object):
@@ -90,3 +108,23 @@ class TestClass(object):
         """
 
         return "Neural Network"
+
+
+def create_trolling(d: dict[str, int]) -> Trolling:
+    """
+    The function `create_trolling` takes a dictionary `d` and returns a `Trolling` object created from
+    the dictionary.
+
+    Parameters
+    ----------
+    d : dict[str, int]
+        A dictionary containing the data needed to create a Trolling object. The keys of the dictionary are
+    strings representing the attributes of the Trolling object, and the values are integers representing
+    the values of those attributes.
+
+    Returns
+    -------
+        An instance of the class Trolling.
+    """
+
+    return Trolling.from_dict(d)

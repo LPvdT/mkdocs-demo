@@ -1,3 +1,5 @@
+"""This module contains factory functions."""
+
 import subprocess
 from typing import Callable
 
