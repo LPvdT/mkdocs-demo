@@ -20,7 +20,7 @@ def gen_ref_pages(config: type[RefGenConfig]) -> None:
         doc_path = path.relative_to(src).with_suffix(".md")
         full_doc_path = config.out_dir.joinpath(doc_path)
 
-        parts = list(module_path.parts)
+        parts = tuple(module_path.parts)
 
         match parts[-1]:
             case "__init__":
