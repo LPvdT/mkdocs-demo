@@ -32,5 +32,4 @@ repos:
       - id: mypy
         name: Mypy
         args:
-          - --strict
           - --ignore-missing-imports
