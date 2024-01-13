@@ -1,21 +1,23 @@
 [tool.poetry]
 authors = ["Laurens van der Tas <laurens.vandertas@gmail.com>"]
-description = "Automatic documentation from sources, using MkDocstrings with MkDocs Material."
-include = ["src/docs", "src/templates", "src/mkdocs.yml"]
-name = "mkdocs-testing"
+description = """\
+Automatic documentation for your project, using MkDocstrings with MkDocs Material. \
+Also shows the usage of pre-commit hooks and CI/CD, using GitHub Actions.\
+"""
+include = [".vscode", "tests"]
+name = "mkdocs-autodocs-demo"
 packages = [
-  {include = "mkdocs_testing", from = "src"},
-  {include = "lib", from = "src"},
+  {include = "mkdocs_demo", from = "src"},
 ]
 readme = "TODO.md"
 version = "0.9.0"
 
 [tool.poetry.scripts]
-build = "src.scripts.mkdocs:build"
-pc = "src.scripts.precommit:run"
-pc-install = "src.scripts.precommit:install"
-pc-update = "src.scripts.precommit:update"
-serve = "src.scripts.mkdocs:serve"
+md-build = "src.mkdocs_demo.scripts.mkdocs:build"
+md-serve = "src.mkdocs_demo.scripts.mkdocs:serve"
+pc = "src.mkdocs_demo.scripts.precommit:run"
+pc-install = "src.mkdocs_demo.scripts.precommit:install"
+pc-update = "src.mkdocs_demo.scripts.precommit:update"
 
 [tool.poetry.dependencies]
 install = "^1.3.5"
