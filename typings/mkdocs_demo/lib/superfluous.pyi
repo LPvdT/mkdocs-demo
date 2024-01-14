@@ -1,0 +1,23 @@
+from _typeshed import Incomplete
+from mkdocs_demo.config.interfaces import ITrolling as ITrolling
+from pathlib import Path
+from typing import Literal, Self
+
+class Trolling(ITrolling):
+    @property
+    def multiple(self) -> float: ...
+    @classmethod
+    def from_dict(cls, d: dict[str, int]) -> Self: ...
+
+class TestClass:
+    MODEL_TYPE: str
+    num_features: Incomplete
+    hidden_layers: Incomplete
+    def __init__(self, num_features: int, hidden_layers: int) -> None: ...
+    def show_model(self) -> dict[str, str | int]: ...
+    @classmethod
+    def load_model(cls, path: Path | str) -> str: ...
+    @staticmethod
+    def get_type() -> Literal["Neural Network"]: ...
+
+def create_trolling(d: dict[str, int]) -> Trolling: ...

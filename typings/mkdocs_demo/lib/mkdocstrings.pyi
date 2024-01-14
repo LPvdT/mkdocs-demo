@@ -1,0 +1,3 @@
+from mkdocs_demo.config.config import RefGenConfig as RefGenConfig
+
+def gen_ref_pages(config: type[RefGenConfig]) -> None: ...
