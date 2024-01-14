@@ -7,8 +7,16 @@ site_description: Automatic documentation from sources, using MkDocstrings with 
 # site_url: ...
 # repo_url: ...
 # repo_name: ...
-site_dir: ../../site
 # edit_uri: edit/main/docs/
+site_dir: ../../site
+use_directory_urls: true
+watch:
+  - config/
+  - docs/
+  - lib/
+  - scripts/
+  - templates/
+  - mkdocs.yml
 copyright: >
   Copyright &copy; 2023 - 2024 Laurens van der Tas -
   <a href="#__consent">Change cookie settings</a>
@@ -23,8 +31,8 @@ validation:
 ##############
 
 nav:
-  - Home:
-      - Overview: index.md
+  - Home: index.md
+  - Project Layout: layout.md
   - API Reference: reference/
 
 #########
@@ -131,22 +139,6 @@ markdown_extensions:
 plugins:
   - offline:
       enabled: !ENV [OFFLINE, false]
-  # # Sponsors only:
-  # - meta:
-  #     enabled: true
-  # - tags:
-  #     enabled: true
-  # - optimize:
-  #     enabled: !ENV [CI, false]
-  #     cache: true
-  #     optimize_png: true
-  #     optimize_png_speed: 4
-  #     optimize_png_strip: true
-  #     optimize_jpg: true
-  #     optimize_jpg_quality: 80
-  #     optimize_jpg_progressive: true
-  #     print_gain: true
-  #     print_gain_summary: true
   - autorefs
   - privacy:
       enabled: true
@@ -168,21 +160,19 @@ plugins:
       nav_file: SUMMARY.md
   - mkdocstrings:
       enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
-      # custom_templates: templates
-      # default_handler: python
-      # enable_inventory: true
+      custom_templates: templates
+      default_handler: python
+      enable_inventory: true
       handlers:
         python:
           import:
             - https://docs.python.org/3/objects.inv
-            - https://installer.readthedocs.io/en/stable/objects.inv
             - https://mkdocstrings.github.io/autorefs/objects.inv
           paths: [src]
           options:
             docstring_options:
               ignore_init_summary: true
             docstring_section_style: list
-            filters: ["!^_"]
             heading_level: 1
             inherited_members: true
             merge_init_into_class: true

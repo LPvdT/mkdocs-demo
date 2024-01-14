@@ -1,0 +1,3 @@
+from typing import Callable
+
+def command_factory(cmd: str) -> Callable[..., int | None]: ...

@@ -1,0 +1,3 @@
+from typing import Literal
+
+def trivial_function() -> Literal["OMG, thanks!"]: ...
