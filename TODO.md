@@ -6,13 +6,15 @@
 
 ## Open
 
++ [ ] Add some more pages for in navigation.
++ [ ] Include `Makefile` alternative, instead of janky `Poetry` scripts.
 + [ ] Create repo on GitHub.
 + [ ] CI/CD with `GitHub Actions`.
-+ [ ] Include `Makefile` alternative, instead of janky `Poetry` scripts.
 + [ ] Write accompanying article on LinkedIn.
 
 ## Closed
 
++ [x] Check serve preview for mistakes in docstrings.
 + [x] Do additional [site configuration](https://squidfunk.github.io/mkdocs-material/creating-your-site/).
 + [x] Write tests.
   + Could include some more, but not really the point of the project.
