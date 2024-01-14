@@ -6,12 +6,14 @@
 
 ## Open
 
-+ [ ] Do additional [site configuration](https://squidfunk.github.io/mkdocs-material/creating-your-site/).
++ [ ] Create repo on GitHub.
 + [ ] CI/CD with `GitHub Actions`.
 + [ ] Include `Makefile` alternative, instead of janky `Poetry` scripts.
++ [ ] Write accompanying article on LinkedIn.
 
 ## Closed
 
++ [x] Do additional [site configuration](https://squidfunk.github.io/mkdocs-material/creating-your-site/).
 + [x] Write tests.
   + Could include some more, but not really the point of the project.
 + [x] Structure code:
