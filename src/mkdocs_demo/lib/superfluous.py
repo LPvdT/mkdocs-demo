@@ -1,7 +1,7 @@
 """This module contains additional trivial filler code."""
 
 from pathlib import Path
-from typing import Literal
+from typing import Literal, Self
 
 from mkdocs_demo.config.interfaces import ITrolling
 
@@ -9,19 +9,45 @@ from mkdocs_demo.config.interfaces import ITrolling
 class Trolling(ITrolling):
     """The class Trolling implements the ITrolling interface."""
 
-    def __init__(self, x: float, n: int) -> None:
-        self.x = x
-        self.n = n
-
     @property
     def multiple(self) -> float:
+        """
+        The function calculates the product of the variables `x` and `n`.
+
+        Returns
+        -------
+        : `float`
+            The product of `self.x` and `self.n`.
+        """
+
         return self.x * self.n
 
-    def __str__(self) -> str:
-        return f"""x={self.x}, n={self.n}, hence the multiple={self.multiple}"""
+    @classmethod
+    def from_dict(cls, d: dict[str, int]) -> Self:
+        """
+        The function `from_dict` takes a dictionary as input, checks if it
+        contains the required keys, and returns an instance of the class with
+        the dictionary values as arguments.
 
-    def __repr__(self) -> str:
-        return f"""{self.x} * {self.n} = {self.multiple}"""
+        Parameters
+        ----------
+        `d` : `dict`[`str`, `int`]
+            The parameter `d` is a dictionary with string keys and integer
+            values.
+
+        Returns
+        -------
+        : `Self`
+            The method is returning an instance of the class itself with the
+            attributes specified in the dictionary `d`.
+        """
+
+        required = ("x", "n")
+        obj = {k: v for k, v in d.items()}
+
+        assert obj.keys() in required
+
+        return cls(**obj)
 
 
 class TestClass(object):
@@ -117,13 +143,14 @@ def create_trolling(d: dict[str, int]) -> Trolling:
 
     Parameters
     ----------
-    d : dict[str, int]
+    `d` : `dict`[`str`, `int`]
         A dictionary containing the data needed to create a Trolling object. The keys of the dictionary are
     strings representing the attributes of the Trolling object, and the values are integers representing
     the values of those attributes.
 
     Returns
     -------
+    : `Trolling`
         An instance of the class Trolling.
     """
 
