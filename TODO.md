@@ -7,13 +7,20 @@
 ## Open
 
 + [ ] Add some more pages for in navigation.
-+ [ ] Include `Makefile` alternative, instead of janky `Poetry` scripts.
+  + [ ] Project layout in file.
+  + [ ] Home in file.
++ [ ] Include `Makefile` to setup project.
+  + [ ] Enable poetry env plugin.
+  + [ ] Install project.
+  + [ ] Update pre-commit hooks.
+  + [ ] Install pre-commit hooks.
 + [ ] Create repo on GitHub.
 + [ ] CI/CD with `GitHub Actions`.
 + [ ] Write accompanying article on LinkedIn.
 
 ## Closed
 
++ [x] Add stubgen script.
 + [x] Check serve preview for mistakes in docstrings.
 + [x] Do additional [site configuration](https://squidfunk.github.io/mkdocs-material/creating-your-site/).
 + [x] Write tests.
