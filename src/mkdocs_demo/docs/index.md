@@ -1,9 +1,3 @@
-## Project layout
+# Home
 
-```bash title="Directory Tree" exec="true" source="tabbed-right" result="ansi"
-tree -haC --gitignore --du --dirsfirst -I ".git|*.pyc"
-```
-
-## External: `installer.records`
-
-See [installer.records][] to learn about records.
+This is the home page. This needs some content.

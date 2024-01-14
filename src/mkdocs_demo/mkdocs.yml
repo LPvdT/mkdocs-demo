@@ -31,8 +31,8 @@ validation:
 ##############
 
 nav:
-  - Home:
-      - Overview: index.md
+  - Home: index.md
+  - Project Layout: layout.md
   - API Reference: reference/
 
 #########
@@ -167,7 +167,6 @@ plugins:
         python:
           import:
             - https://docs.python.org/3/objects.inv
-            - https://installer.readthedocs.io/en/stable/objects.inv
             - https://mkdocstrings.github.io/autorefs/objects.inv
           paths: [src]
           options:
