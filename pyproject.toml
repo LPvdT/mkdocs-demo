@@ -13,6 +13,7 @@ readme = "TODO.md"
 version = "0.9.0"
 
 [tool.poetry.scripts]
+gen-typings = "src.mkdocs_demo.scripts.mypy:gen_types"
 md-build = "src.mkdocs_demo.scripts.mkdocs:build"
 md-serve = "src.mkdocs_demo.scripts.mkdocs:serve"
 pc = "src.mkdocs_demo.scripts.precommit:run"
@@ -35,6 +36,7 @@ python = "^3.11"
 black = "^23.12.1"
 ipykernel = "^6.28.0"
 ipywidgets = "^8.1.1"
+mypy = "^1.8.0"
 pre-commit = "^3.6.0"
 
 [tool.poetry.group.test.dependencies]
