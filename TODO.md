@@ -7,8 +7,10 @@
 ## Open
 
 + [ ] Add some more pages for in navigation.
-  + [ ] Project layout in file.
-  + [ ] Home in file.
+  + [x] Project layout in file.
+  + [x] Home in file.
+  + [ ] Write some content for Home.
+  + [ ] Throw in some admonitions for fancy graphics.
 + [ ] Include `Makefile` to setup project.
   + [ ] Enable poetry env plugin.
   + [ ] Install project.
