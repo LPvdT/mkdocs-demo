@@ -6,11 +6,6 @@
 
 ## Open
 
-+ [ ] Add some more pages for in navigation.
-  + [x] Project layout in file.
-  + [x] Home in file.
-  + [ ] Write some content for Home.
-  + [ ] Throw in some admonitions for fancy graphics.
 + [ ] Include `Makefile` to setup project.
   + [ ] Enable poetry env plugin.
   + [ ] Install project.
@@ -22,6 +17,11 @@
 
 ## Closed
 
++ [x] Add some more pages for in navigation.
+  + [x] Project layout in file.
+  + [x] Home in file.
+  + [x] Write some content for Home.
+  + [x] Throw in some admonitions for fancy graphics.
 + [x] Add stubgen script.
 + [x] Check serve preview for mistakes in docstrings.
 + [x] Do additional [site configuration](https://squidfunk.github.io/mkdocs-material/creating-your-site/).
