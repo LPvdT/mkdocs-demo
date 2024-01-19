@@ -31,7 +31,7 @@ validation:
 ##############
 
 nav:
-  - Home: index.md
+  - Project: index.md
   - Project Layout: layout.md
   - API Reference: reference/
 
