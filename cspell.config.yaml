@@ -1,0 +1,7 @@
+version: "0.2"
+ignorePaths: ["*/**/mkdocs.yml"]
+dictionaryDefinitions: []
+dictionaries: []
+words: []
+ignoreWords: []
+import: []
