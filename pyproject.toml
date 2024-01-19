@@ -9,7 +9,7 @@ name = "mkdocs-autodocs-demo"
 packages = [
   {include = "mkdocs_demo", from = "src"},
 ]
-readme = "TODO.md"
+readme = "README.md"
 version = "0.9.0"
 
 [tool.poetry.scripts]
