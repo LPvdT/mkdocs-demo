@@ -18,8 +18,8 @@ watch:
   - templates/
   - mkdocs.yml
 copyright: >
-  Copyright &copy; 2023 - 2024 Laurens van der Tas -
-  <a href="#__consent">Change cookie settings</a>
+  Laurens van der Tas - Copyright &copy; 2023 - 2024
+  <br/><a href="#__consent" style="font-size: 0.75em; font-style: italic;">Change cookie settings</a>
 
 validation:
   omitted_files: warn
@@ -31,8 +31,8 @@ validation:
 ##############
 
 nav:
-  - Project: index.md
-  - Project Layout: layout.md
+  - About: index.md
+  - Features: features/
   - API Reference: reference/
 
 #########
