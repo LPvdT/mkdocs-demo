@@ -5,9 +5,9 @@
 site_name: MkDocs + MkDocstrings Testing
 site_description: Automatic documentation from sources, using MkDocstrings with MkDocs Material.
 # site_url: ...
-# repo_url: ...
-# repo_name: ...
-# edit_uri: edit/main/docs/
+repo_url: https://github.com/LPvdT/mkdocs-demo
+repo_name: mkdocs-demo
+edit_uri: edit/main/src/mkdocs_demo/docs
 site_dir: ../../site
 use_directory_urls: true
 watch:
