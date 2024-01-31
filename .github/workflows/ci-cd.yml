@@ -48,3 +48,4 @@ jobs:
             --clean \
             --use-directory-urls \
             --force
+        working-directory: ./src
