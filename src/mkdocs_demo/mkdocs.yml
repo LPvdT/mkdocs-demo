@@ -103,6 +103,7 @@ extra_css:
 
 markdown_extensions:
   - abbr
+  - def_list
   - attr_list
   - admonition
   - callouts
@@ -121,6 +122,8 @@ markdown_extensions:
       check_paths: true
   - pymdownx.highlight:
       anchor_linenums: true
+      use_pygments: true
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.superfences
   - pymdownx.tabbed:
@@ -195,17 +198,13 @@ plugins:
 #########
 
 extra:
-  # version:
-  #   provider: mike
-  # mike set-default --push latest
-  # mike deploy --push --update-aliases 0.1 latest
+  version:
+    provider: mike
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/LPvdT
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/lpvdt/
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/mkdocstrings/
   consent:
     title: Cookie consent
     description: >-
