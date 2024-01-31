@@ -1,51 +1,66 @@
-name: ci-cd
+name: CI-CD
+
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
       - master
-env:
-  cache_id:
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
 permissions:
   contents: write
+
+env:
+  PYTHON_VERSION: "3.11"
+  POETRY_VERSION: "1.7.1"
+  POETRY_URL: https://install.python-poetry.org
+
 jobs:
-  deploy:
+  deploy-docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        name: Configure Git credentials
-      - run: |
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Git credentials
+        run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-      - uses: actions/setup-python@v4
-        name: Configure Python
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        id: setup_python
         with:
-          python-version: 3.11
-      - run: echo "cache_id=$(date --utc +%V)" >> $GITHUB_ENV
+          python-version: ${{ env.PYTHON_VERSION }}
 
-      - uses: actions/cache@v3
-        name: Install dependencies with caching
+      - name: Poetry caching
+        uses: actions/cache@v3
         with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: |
-          pip install \
-            mkdocs-material[imaging] \
-            mkdocs-gen-files \
-            mkdocs-literate-nav \
-            mkdocs-minify-plugin \
-            mkdocs-section-index \
-            markdown-callouts \
-            mkdocstrings[python] \
-            markdown-exec[ansi]
-      - run: |
+          path: ~/.cache/pypoetry
+          key: poetry-cache-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ env.POETRY_VERSION }}
+
+      - name: Cache packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.local
+          key: poetry-local-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}-${{ hashFiles('.github/workflows/*.yml') }}
+
+      - name: Install Poetry ${{ env.POETRY_VERSION }}
+        run: |
+          curl -sSL ${{ env.POETRY_URL }} | python - --version ${{ env.POETRY_VERSION }}
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Deploy site
+        run: |
           mkdocs gh-deploy \
-            --config-file mkdocs_demo/mkdocs.yml \
+            --config-file src/mkdocs_demo/mkdocs.yml \
             --clean \
             --use-directory-urls \
             --force
-        working-directory: ./src
