@@ -31,5 +31,9 @@ repos:
     hooks:
       - id: mypy
         name: Mypy
+        exclude: |
+          (?x)(
+            ^typings/
+          )
         args:
           - --ignore-missing-imports
