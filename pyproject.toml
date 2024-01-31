@@ -4,13 +4,22 @@ description = """\
 Automatic documentation for your project, using MkDocstrings with MkDocs Material. \
 Also shows the usage of pre-commit hooks and CI/CD, using GitHub Actions.\
 """
-include = [".vscode", "tests"]
-name = "mkdocs-autodocs-demo"
+include = [
+  "tests",
+  "typings",
+  ".github",
+  ".vscode",
+  ".env.example",
+  ".editorconfig",
+  ".pre-commit-config.yaml",
+  "Makefile",
+]
+name = "mkdocs-demo"
 packages = [
   {include = "mkdocs_demo", from = "src"},
 ]
 readme = "README.md"
-version = "0.9.0"
+version = "1.0.0"
 
 [tool.poetry.scripts]
 gen-typings = "src.mkdocs_demo.scripts.mypy:gen_types"
@@ -31,6 +40,7 @@ mkdocs-minify-plugin = "^0.7.2"
 mkdocs-section-index = "^0.3.8"
 mkdocstrings = {extras = ["python"], version = "^0.24.0"}
 python = "^3.11"
+mike = "^2.0.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.12.1"
@@ -38,6 +48,7 @@ ipykernel = "^6.28.0"
 ipywidgets = "^8.1.1"
 mypy = "^1.8.0"
 pre-commit = "^3.6.0"
+ruff = "^0.1.15"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.4"
