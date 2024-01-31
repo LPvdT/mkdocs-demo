@@ -44,7 +44,7 @@ jobs:
             markdown-exec[ansi]
       - run: |
           mkdocs gh-deploy \
-            --config-file src/mkdocs_demo/mkdocs.yml \
+            --config-file mkdocs_demo/mkdocs.yml \
             --clean \
             --use-directory-urls \
             --force
