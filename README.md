@@ -6,19 +6,19 @@
 
 ## Open
 
-+ [ ] Add `site_url` to `mkdocs.yml`.
 + [ ] Include `Makefile` to setup project.
   + [x] Create template `Makefile`.
   + [ ] Enable poetry env plugin.
   + [ ] Install project.
   + [ ] Update pre-commit hooks.
   + [ ] Install pre-commit hooks.
-+ [ ] Create repo on GitHub.
-+ [ ] CI/CD with `GitHub Actions`.
 + [ ] Write accompanying article on LinkedIn.
 
 ## Closed
 
++ [x] Add `site_url` to `mkdocs.yml`.
++ [x] Create repo on GitHub.
++ [x] CI/CD with `GitHub Actions`.
 + [x] Add some more pages for in navigation.
   + [x] Project layout in file.
   + [x] Home in file.
