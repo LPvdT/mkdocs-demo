@@ -8,3 +8,10 @@ The CI/CD pipelines for this project are defined using [GitHub Actions](https://
 
 *[CI/CD]: Continuous Integration - Continuous Development
 [^fn_1]: https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions
+
+## Full workflow
+
+??? example "Check out the full `ci-cd.yml` here."
+    ```bash exec="true" result="yaml"
+    cat .github/workflows/ci-cd.yml
+    ```
