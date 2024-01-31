@@ -6,6 +6,7 @@
 
 ## Open
 
++ [ ] Add `site_url` to `mkdocs.yml`.
 + [ ] Include `Makefile` to setup project.
   + [x] Create template `Makefile`.
   + [ ] Enable poetry env plugin.
