@@ -6,14 +6,12 @@
 
 ## Open
 
-+ [ ] Expand documentation sections.
-  + [ ] CI-CD
-  + [ ] Auto-generated Documentation
 + [ ] Write accompanying article on LinkedIn.
 
 ## Closed
 
 + [x] Include `Makefile` to setup project.
+  + [x] Create template `Makefile`.
   + [x] Enable poetry env plugin.
   + [x] Install project.
   + [x] Update pre-commit hooks.
