@@ -22,9 +22,12 @@ readme = "README.md"
 version = "1.0.0"
 
 [tool.poetry.scripts]
+# Mypy typing stubs
 gen-typings = "src.mkdocs_demo.scripts.mypy:gen_types"
+# Makedocs
 md-build = "src.mkdocs_demo.scripts.mkdocs:build"
 md-serve = "src.mkdocs_demo.scripts.mkdocs:serve"
+# Pre-commit hooks
 pc = "src.mkdocs_demo.scripts.precommit:run"
 pc-install = "src.mkdocs_demo.scripts.precommit:install"
 pc-update = "src.mkdocs_demo.scripts.precommit:update"
@@ -33,6 +36,7 @@ pc-update = "src.mkdocs_demo.scripts.precommit:update"
 install = "^1.3.5"
 markdown-callouts = "^0.3.0"
 markdown-exec = {extras = ["ansi"], version = "^1.8.0"}
+mike = "^2.0.0"
 mkdocs-gen-files = "^0.5.0"
 mkdocs-literate-nav = "^0.6.1"
 mkdocs-material = {extras = ["imaging"], version = "^9.5.3"}
@@ -40,7 +44,6 @@ mkdocs-minify-plugin = "^0.7.2"
 mkdocs-section-index = "^0.3.8"
 mkdocstrings = {extras = ["python"], version = "^0.24.0"}
 python = "^3.11"
-mike = "^2.0.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.12.1"
