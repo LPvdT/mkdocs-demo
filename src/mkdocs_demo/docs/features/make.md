@@ -7,7 +7,7 @@ A `Makefile` is used to determine which pieces of the program need to be recompi
 
 ## Why use a `Makefile`?
 
-Honestly, I primarily use these in conjunction with compiled languages (e.g. within my [`Rust`](https://www.rust-lang.org/) or [`Mojo`](https://www.modular.com/max/mojo) projects). They make more sense in those contexts (no need to use `.PHONY` everywhere). The main reason I have chosen to include one in this project is to demonstrate their application.
+Honestly, I primarily use these in conjunction with compiled languages, e.g. within my [`Rust`](https://www.rust-lang.org/) or [`Mojo`](https://www.modular.com/max/mojo) projects. They make more sense in those contexts (no need to use `.PHONY` everywhere), although for Rust, [`cargo-make`](https://sagiegurari.github.io/cargo-make/) arguably does the job better. The main reason I have chosen to include one in this project is to demonstrate their application.
 
 The `make` tool incorporates logic to determine what to recompile and what not to recompile (or re-transpile). For example, if a source file has not been changed, it will not be recompiled.
 

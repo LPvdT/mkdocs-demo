@@ -55,7 +55,7 @@ jobs:
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
-        run: poetry install
+        run: poetry install --without test
 
       - name: Deploy site
         run: |
