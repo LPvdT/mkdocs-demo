@@ -61,11 +61,11 @@ class TestClass(object):
 
         Parameters
         ----------
-        num_features : int
+        `num_features` : `int`
             The `num_features` parameter represents the number of input features in your model. It
             indicates the size of the input layer of your neural network.
-        hidden_layers : int
-            The "hidden_layers" parameter represents the number of hidden layers in a neural network.
+        `hidden_layers` : `int`
+            The `hidden_layers` parameter represents the number of hidden layers in a neural network.
         """
 
         self.num_features: int = num_features
@@ -78,7 +78,8 @@ class TestClass(object):
 
         Returns
         -------
-        A dictionary containing the number of features and the number of hidden layers.
+        : `dict`[`str`, `int`]
+            A dictionary containing the number of features and the number of hidden layers.
         """
 
         return {
@@ -93,7 +94,8 @@ class TestClass(object):
 
         Returns
         -------
-        A dictionary containing the model type and the layers of the model.
+        : `dict`[`str`, `str` | `int`]
+            A dictionary containing the model type and the layers of the model.
         """
 
         model_dict: dict[str, str | int] = {"model_type": self.MODEL_TYPE}
@@ -109,13 +111,13 @@ class TestClass(object):
 
         Parameters
         ----------
-        path : Path | str
+        `path` : `Path` | `str`
             The `path` parameter is the path to the model file that needs to be loaded. It can be either a
             string or a `Path` object.
 
         Returns
         -------
-        A string that indicates the path from which the model was loaded.
+            A string that indicates the path from which the model was loaded.
         """
 
         if isinstance(path, str):
@@ -130,7 +132,8 @@ class TestClass(object):
 
         Returns
         -------
-        The string "Neural Network".
+        : `Literal`
+            The string "Neural Network".
         """
 
         return "Neural Network"
@@ -145,8 +148,8 @@ def create_trolling(d: dict[str, int]) -> Trolling:
     ----------
     `d` : `dict`[`str`, `int`]
         A dictionary containing the data needed to create a Trolling object. The keys of the dictionary are
-    strings representing the attributes of the Trolling object, and the values are integers representing
-    the values of those attributes.
+        strings representing the attributes of the Trolling object, and the values are integers representing
+        the values of those attributes.
 
     Returns
     -------

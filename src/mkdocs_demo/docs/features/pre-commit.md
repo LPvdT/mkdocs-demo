@@ -49,9 +49,21 @@ These hooks are from the [`mypy`](https://github.com/pre-commit/mirrors-mypy) re
 
 ### [Ruff](https://docs.astral.sh/ruff/)
 
+
 These hooks are from the [`rust`](https://github.com/astral-sh/ruff-pre-commit) repository:
+
+For those of you who have not yet heard about Ruff; it is a drop-in replacement for `isort`, `black` and `flake8` combined. Within VSCode, it takes care of linting, formatting and import sorting.
+
+Ruff works out of the box, and completely blows aforementioned packages out of the water in terms of performance, due to it being written in Rust.
 
 + **`ruff`:**
     + Linter for Python code.
 + **`ruff-format`:**
     + Formatter for Python code.
+
+## Full configuration
+
+??? example "Check out the full `.pre-commit-config.yaml` here."
+    ```bash exec="true" result="yaml"
+    cat .pre-commit-config.yaml
+    ```

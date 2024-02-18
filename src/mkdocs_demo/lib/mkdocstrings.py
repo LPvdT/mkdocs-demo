@@ -14,9 +14,9 @@ def gen_ref_pages(config: type[RefGenConfig]) -> None:
 
     Parameters
     ----------
-    config : type[RefGenConfig]
+    `config` : `type`[`RefGenConfig`]
         The `config` parameter is of type `RefGenConfig`. It is used to provide configuration settings for
-    generating reference pages.
+        generating reference pages.
     """
 
     nav = mkdocs_gen_files.Nav()

@@ -11,7 +11,7 @@ def command_factory(cmd: str) -> Callable[..., int | None]:
 
     Parameters
     ----------
-    cmd : str
+    `cmd` : `str`
         The `cmd` parameter is a string that represents a command to be executed.
 
     Returns

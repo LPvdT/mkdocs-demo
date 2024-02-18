@@ -6,16 +6,16 @@
 
 ## Open
 
-+ [ ] Include `Makefile` to setup project.
-  + [x] Create template `Makefile`.
-  + [ ] Enable poetry env plugin.
-  + [ ] Install project.
-  + [ ] Update pre-commit hooks.
-  + [ ] Install pre-commit hooks.
 + [ ] Write accompanying article on LinkedIn.
 
 ## Closed
 
++ [x] Include `Makefile` to setup project.
+  + [x] Create template `Makefile`.
+  + [x] Enable poetry env plugin.
+  + [x] Install project.
+  + [x] Update pre-commit hooks.
+  + [x] Install pre-commit hooks.
 + [x] Add `site_url` to `mkdocs.yml`.
 + [x] Create repo on GitHub.
 + [x] CI/CD with `GitHub Actions`.
