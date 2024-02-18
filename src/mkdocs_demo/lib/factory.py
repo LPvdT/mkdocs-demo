@@ -16,8 +16,9 @@ def command_factory(cmd: str) -> Callable[..., int | None]:
 
     Returns
     -------
-    The factory function returns a callable object, which is a function. The function takes no
-    arguments and returns either an integer or None.
+    `Callable`[`...`, `int` | `None`]
+        The factory function returns a callable object, which is a function. The function takes no
+        arguments and returns either an integer or None.
     """
 
     def _func(_cmd: str = cmd) -> int | None:

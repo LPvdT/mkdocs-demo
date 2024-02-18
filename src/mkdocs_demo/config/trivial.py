@@ -10,7 +10,7 @@ def trivial_function() -> Literal["OMG, thanks!"]:
 
     Returns
     -------
-    : `Literal`
+    `Literal`
         Absolutely useless string literal.
     """
 

@@ -41,6 +41,7 @@ class ITrolling(metaclass=ABCMeta):
             The parameter `n` is an integer that represents the number of
             iterations or steps in a process.
         """
+
         self.x = x
         self.n = n
 
