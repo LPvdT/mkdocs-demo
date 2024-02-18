@@ -43,7 +43,7 @@ theme:
   name: material
   language: en
   font:
-    text: Inter
+    text: Barlow
     code: JetBrains Mono
   favicon: images/code-json.png
   icon:
@@ -115,7 +115,10 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.magiclink
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: lpvdt
+      repo: mkdocs-demo
   - pymdownx.betterem
   - pymdownx.snippets:
       base_path: [!relative $config_dir]
@@ -208,7 +211,6 @@ extra:
   consent:
     title: Cookie consent
     description: >-
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
+      I use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of my documentation, and whether or not users
+      find what they're searching for. Your consent helps me to improve the documentation.
