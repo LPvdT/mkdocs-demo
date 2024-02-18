@@ -16,7 +16,7 @@ class Trolling(ITrolling):
 
         Returns
         -------
-        : `float`
+        `float`
             The product of `self.x` and `self.n`.
         """
 
@@ -37,7 +37,7 @@ class Trolling(ITrolling):
 
         Returns
         -------
-        : `Self`
+        `Self`
             The method is returning an instance of the class itself with the
             attributes specified in the dictionary `d`.
         """
@@ -64,6 +64,7 @@ class TestClass(object):
         `num_features` : `int`
             The `num_features` parameter represents the number of input features in your model. It
             indicates the size of the input layer of your neural network.
+
         `hidden_layers` : `int`
             The `hidden_layers` parameter represents the number of hidden layers in a neural network.
         """
@@ -78,7 +79,7 @@ class TestClass(object):
 
         Returns
         -------
-        : `dict`[`str`, `int`]
+        `dict`[`str`, `int`]
             A dictionary containing the number of features and the number of hidden layers.
         """
 
@@ -94,7 +95,7 @@ class TestClass(object):
 
         Returns
         -------
-        : `dict`[`str`, `str` | `int`]
+        `dict`[`str`, `str` | `int`]
             A dictionary containing the model type and the layers of the model.
         """
 
@@ -117,6 +118,7 @@ class TestClass(object):
 
         Returns
         -------
+        `str`
             A string that indicates the path from which the model was loaded.
         """
 
@@ -132,7 +134,7 @@ class TestClass(object):
 
         Returns
         -------
-        : `Literal`
+        `Literal`
             The string "Neural Network".
         """
 
@@ -148,12 +150,12 @@ def create_trolling(d: dict[str, int]) -> Trolling:
     ----------
     `d` : `dict`[`str`, `int`]
         A dictionary containing the data needed to create a Trolling object. The keys of the dictionary are
-        strings representing the attributes of the Trolling object, and the values are integers representing
-        the values of those attributes.
+    strings representing the attributes of the Trolling object, and the values are integers representing
+    the values of those attributes.
 
     Returns
     -------
-    : `Trolling`
+    `Trolling`
         An instance of the class Trolling.
     """
 
