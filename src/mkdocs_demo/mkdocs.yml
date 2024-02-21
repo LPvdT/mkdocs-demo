@@ -152,7 +152,7 @@ plugins:
       assets: true
       assets_fetch: true
   - social:
-      enabled: !ENV [CI, false]
+      enabled: !ENV [CI, true]
       cards: true
       cards_dir: assets/images/social
   - search:
@@ -194,7 +194,7 @@ plugins:
             group_by_category: true
             show_if_no_docstring: true
   - minify:
-      minify_html: !ENV [DEPLOY, false]
+      minify_html: !ENV [DEPLOY, true]
 
 #########
 # Extra #
