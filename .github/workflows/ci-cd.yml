@@ -36,7 +36,6 @@ jobs:
         id: setup_python
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-          cache: poetry
 
       - name: Poetry caching
         uses: actions/cache@v3
