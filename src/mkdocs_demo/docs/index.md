@@ -37,15 +37,12 @@ This project uses [pre-commit hooks](https://pre-commit.com/). For more details 
 
 ### CI-CD
 
-<!-- TODO -->
-...
+The CI/CD pipeline for this project has been built using GitHub Actions. Details can be found [here](./features/ci-cd.md).
 
 ### Make
 
-<!-- TODO -->
-...
+For demonstration purposes, this project includes a Makefile as an alternative to Poetry scripts. Check the details [here](./features/make.md).
 
 ### Unit testing
 
-<!-- TODO -->
-...
+To show the proces of incorporating tests into a project, I have included some trivial unit tests. Additional info can be found [here](./features/unit-testing.md).
