@@ -7,6 +7,8 @@
 ## Open
 
 + [ ] Write accompanying article on LinkedIn.
++ [ ] Check fonts.
++ [ ] Fix versioning.
 
 ## Closed
 
