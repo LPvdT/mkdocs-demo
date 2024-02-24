@@ -5,18 +5,6 @@ This is an example website of static generated website using
 
 It demonstrates the application several seminal approaches and techniques. A summary of these is shown below. More details on these can be found in the [Features](./features/index.md) section.
 
-## Project Layout
-
-This section gives an overview of the layout of the repository.
-
-!!! info
-    The code to generate this directory tree gets automatically executes
-    and inserted upon building the documentation by the [`markdown-exec`](https://pypi.org/project/markdown-exec/) package.
-
-```bash title="Project structure" exec="true" source="material-block" result="ansi" html="false"
-tree -haC --gitignore --du --dirsfirst -I ".git|*.pyc|*.pyi"
-```
-
 ## Project Features
 
 ### Auto-generated documentation
@@ -46,3 +34,15 @@ For demonstration purposes, this project includes a Makefile as an alternative t
 ### Unit testing
 
 To show the proces of incorporating tests into a project, I have included some trivial unit tests. Additional info can be found [here](./features/unit-testing.md).
+
+## Project Layout
+
+This section gives an overview of the layout of the repository.
+
+!!! info
+    The code to generate this directory tree gets automatically executes
+    and inserted upon building the documentation by the [`markdown-exec`](https://pypi.org/project/markdown-exec/) package.
+
+```bash title="Project structure" exec="true" source="material-block" result="ansi" html="false"
+tree -haC --gitignore --du --dirsfirst -I ".git|*.pyc|*.pyi"
+```
