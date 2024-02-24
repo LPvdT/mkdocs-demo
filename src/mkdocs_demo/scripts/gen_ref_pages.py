@@ -3,4 +3,4 @@
 from mkdocs_demo.config.config import RefGenConfig
 from mkdocs_demo.lib.mkdocstrings import gen_ref_pages
 
-gen_ref_pages(config=RefGenConfig)
+_ = gen_ref_pages(config=RefGenConfig)

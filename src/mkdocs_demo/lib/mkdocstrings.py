@@ -1,13 +1,14 @@
 """This module contains code for auto-generating the codebase documentation."""
 
 from pathlib import Path
+from typing import Literal
 
 import mkdocs_gen_files
 
 from mkdocs_demo.config.config import RefGenConfig
 
 
-def gen_ref_pages(config: type[RefGenConfig]) -> None:
+def gen_ref_pages(config: type[RefGenConfig]) -> Literal[True]:
     """
     The `gen_ref_pages` function generates reference pages for Python modules
     and creates a navigation structure for them.
@@ -48,3 +49,5 @@ def gen_ref_pages(config: type[RefGenConfig]) -> None:
 
     with mkdocs_gen_files.open(config.out_dir.joinpath("SUMMARY.md"), "w") as nav_file:
         nav_file.writelines(nav.build_literate_nav())
+
+    return True
