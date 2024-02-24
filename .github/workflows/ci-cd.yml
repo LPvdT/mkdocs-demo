@@ -73,6 +73,6 @@ jobs:
       - name: Upload release artifact
         uses: AButler/upload-release-assets@v3.0
         with:
-          files: "dist/*.tar.gz"
+          files: "*.tar.gz"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: "1.1"
