@@ -2,7 +2,7 @@
 # Site #
 ########
 
-site_name: MkDocs + MkDocstrings Testing
+site_name: MkDocs Auto Documentation
 site_description: Automatic documentation from sources, using MkDocstrings with MkDocs Material.
 site_url: https://LPvdT.github.io/mkdocs-demo
 repo_url: https://github.com/LPvdT/mkdocs-demo
