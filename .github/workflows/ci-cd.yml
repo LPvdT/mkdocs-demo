@@ -6,6 +6,7 @@ on:
       - main
       - master
   pull_request:
+    types: closed
     branches:
       - main
       - master
@@ -65,3 +66,12 @@ jobs:
               --clean \
               --use-directory-urls \
               --force
+
+      - name: Build release artifacts
+        run: poetry build
+
+      - name: Upload release artifact
+        uses: AButler/upload-release-assets@v3.0
+        with:
+          files: "dist/*.tar.gz"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}

@@ -87,7 +87,7 @@ The CI/CD pipelines for this project are defined using [GitHub Actions](https://
 
           + `push:` On a push to the `master`/`main` branch.
           + `pull_request:` On pull request to the `master`/`main` branch.
-          + `workflow_dispatch:` Enables the workflow to be triggered manually (from *GitHub*'s UI).
+          + `workflow_dispatch:` Enables the workflow to be triggered manually (e.g. from *GitHub*'s browser interface).
     2. Assign `write` permissions to the workflow.
     3. Define a map of environment variables available in the workflow.
     4. The name of the job in the workflow.
