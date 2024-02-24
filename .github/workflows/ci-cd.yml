@@ -67,12 +67,12 @@ jobs:
               --use-directory-urls \
               --force
 
-      - name: Build release artifacts
-        run: poetry build
+      # - name: Build release artifacts
+      #   run: poetry build
 
-      - name: Upload release artifact
-        uses: AButler/upload-release-assets@v3.0
-        with:
-          files: "*.tar.gz"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: "1.1"
+      # - name: Upload release artifact
+      #   uses: AButler/upload-release-assets@v3.0
+      #   with:
+      #     files: "*.tar.gz"
+      #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+      #     release-tag: "1.1"
