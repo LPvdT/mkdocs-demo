@@ -6,19 +6,26 @@
 
 ## Open
 
-+ [ ] Use workflows from [this repo](https://github.com/ajndkr/lanarky/blob/main/Makefile) as inspiration. Also:
-  + [ ] `.pre-commit-config.yaml`
++ [x] Use workflows from [this repo](https://github.com/ajndkr/lanarky/blob/main/Makefile) as inspiration. Also:
+  + [x] `.pre-commit-config.yaml`
   + [x] `Makefile`
   + [x] `ISSUE_TEMPLATE`
   + [x] Etc.
 + [x] Move these to-do's to their own file.
-+ [ ] Include proper readme and populate it.
++ [ ] Workflows include *Poetry* `.env` plugin.
++ [ ] Include proper `README.md` and populate it.
 + [x] Add `LICENSE`
 + [ ] Auto-add the `ci-cd.yaml` to the *CI/CD* page, and provide the annotation markers in the source file (if this counts as valid YAML).
 + [ ] Update *Make* page for the changes to `Makefile`.
-+ [ ] Check fonts.
-+ [ ] Fix versioning.
-+ [ ] Write accompanying article on LinkedIn.
++ [ ] Update *Pre-commit* page for the changes to `.pre-commit-config.yaml`.
++ [ ] Check fonts: are there better choices?
+  + Source Code
+  + Rubik
+  + Inter
+  + Karla
+  + Other
++ [ ] Fix versioning appearance on page.
++ [ ] Write accompanying article on *LinkedIn*.
 
 ## Closed
 
