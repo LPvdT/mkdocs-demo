@@ -11,6 +11,8 @@
   + [x] `Makefile`
   + [x] `ISSUE_TEMPLATE`
   + [x] Etc.
++ [ ] Don't deploy documentation on fail in CI/CD pipeline:
+  + Possibly detach the build process and put it in its own job step. 
 + [x] Move these to-do's to their own file.
 + [ ] Workflows include *Poetry* `.env` plugin.
 + [ ] Include proper `README.md` and populate it.
