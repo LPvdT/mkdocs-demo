@@ -1,0 +1,45 @@
+name: Code Check
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: 3.11
+
+jobs:
+  code-check:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      # Init
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        id: setup_python
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      # Pre-commit
+      - name: Pre-commit caching
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
+          restore-keys: |
+            pre-commit-
+
+      - name: Set up pre-commit
+        run: |
+          pip install pre-commit
+
+      - name: Run pre-commit hooks
+        run: pre-commit run --all --show-diff-on-failure
