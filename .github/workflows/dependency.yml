@@ -1,0 +1,83 @@
+name: Dependency Manager
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every week on Sunday at 00:00
+    - cron: 0 0 * * 0
+
+env:
+  PYTHON_VERSION: 3.11
+  POETRY_VERSION: 1.7.1
+  POETRY_URL: https://install.python-poetry.org
+
+jobs:
+  update-dependencies:
+    name: Weekly dependency update
+    runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: deps/update
+    steps:
+      # Init
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python ${{ env.PYTHON_VERSION }}
+        id: setup_python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      # Poetry
+      - name: Poetry caching
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pypoetry
+          key: pypoetry-bin-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ env.POETRY_VERSION }}
+          restore-keys: |
+            pypoetry-bin-
+
+      - name: Install Poetry ${{ env.POETRY_VERSION }}
+        run: |
+          curl -sSL ${{ env.POETRY_URL }} | python - --version ${{ env.POETRY_VERSION }}
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      # Update
+      - name: Update core dependencies
+        run: |
+          poetry self update
+
+      - name: Update pre-commit hooks
+        run: |
+          poetry run pre-commit autoupdate
+
+      - name: Detect changes
+        id: changes
+        run: |
+          echo "count=$(git status --porcelain=v1 2>/dev/null | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.count > 0
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "build(deps): upgrade dependencies"
+          git push -f origin ${{ github.ref_name }}:$BRANCH_NAME
+
+      - name: Open pull request
+        if: steps.changes.outputs.count > 0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR=$(gh pr list --head $BRANCH_NAME --json number -q '.[0].number')
+          if [ -z $PR ]; then
+            gh pr create \
+              --draft \
+              --head $BRANCH_NAME \
+              --title "build(deps): upgrade dependencies" \
+              --body "Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+              --label "dependencies"
+          else
+            echo "Pull request already exists."
+          fi
