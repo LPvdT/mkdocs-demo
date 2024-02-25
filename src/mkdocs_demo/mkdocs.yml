@@ -4,10 +4,10 @@
 
 site_name: MkDocs Auto Documentation
 site_description: Automatic documentation from sources, using MkDocstrings with MkDocs Material.
-site_url: https://LPvdT.github.io/mkdocs-demo
-repo_url: https://github.com/LPvdT/mkdocs-demo
+site_url: https://LPvdT.github.io/mkdocs-demo/
+repo_url: https://github.com/LPvdT/mkdocs-demo/
 repo_name: mkdocs-demo
-edit_uri: edit/main/src/mkdocs_demo/docs
+edit_uri: edit/main/src/mkdocs_demo/docs/
 site_dir: ../../site
 use_directory_urls: true
 watch:
@@ -43,7 +43,7 @@ theme:
   name: material
   language: en
   font:
-    text: Barlow
+    text: Source Sans 3
     code: JetBrains Mono
   favicon: images/code-json.png
   icon:
@@ -203,6 +203,7 @@ plugins:
 extra:
   version:
     provider: mike
+    default: stable
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/LPvdT
