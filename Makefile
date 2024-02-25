@@ -1,6 +1,6 @@
 default: help
 
-.PHONY: all pkg-install pkg-update pc-install pc-update pc-run md-serve md-build
+.PHONY: all pkg-install pkg-update pkg-compile pkg-types pc-install pc-update pc-run md-serve md-build
 
 help: ## Show help for each recipe.
 	@echo "Usage:\n\tmake <recipe>"
@@ -17,6 +17,12 @@ pkg-install: ## Installs the project.
 
 pkg-update: pkg-install ## Updates the project's dependencies to their latest versions.
 	poetry update
+
+pkg-types: pkg-install ## Build the typing stubs for the project.
+	stubgen -p mkdocs_demo -o typings
+
+pkg-compile: pkg-install pkg-types ## Compiles the project into sdist and wheel.
+	poetry build
 
 # Pre-commit recipes
 pc-install: pkg-install ## Installs the pre-commit hooks.
