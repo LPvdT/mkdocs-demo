@@ -6,31 +6,30 @@
 
 ## Open
 
++ [ ] Don't deploy documentation on fail in CI/CD pipeline:
+  + Possibly detach the build process and put it in its own job step.
++ [ ] Use a [different action](https://github.com/marketplace/actions/gh-release) for creating releases.
++ [ ] Include proper `README.md` and populate it.
++ [ ] Auto-add the `ci-cd.yaml` to the *CI/CD* page, and provide the annotation markers in the source file (if this counts as valid YAML).
++ [ ] Update *Make* page for the changes to `Makefile`.
++ [ ] Update *Pre-commit* page for the changes to `.pre-commit-config.yaml`.
++ [ ] Fix versioning appearance on page.
+  + Might be going wrong with `mkdocs.yml` not being in the repo root.
++ [ ] Write accompanying article on *LinkedIn*.
+
+## Closed
+
++ [x] Check fonts: are there better choices?
+  + [Red Hat Text](https://fonts.google.com/specimen/Red+Hat+Text)
+  + [x] [Source Sans](https://fonts.google.com/specimen/Source+Sans+3)
 + [x] Use workflows from [this repo](https://github.com/ajndkr/lanarky/blob/main/Makefile) as inspiration. Also:
   + [x] `.pre-commit-config.yaml`
   + [x] `Makefile`
   + [x] `ISSUE_TEMPLATE`
   + [x] Etc.
-+ [ ] Don't deploy documentation on fail in CI/CD pipeline:
-  + Possibly detach the build process and put it in its own job step. 
 + [x] Move these to-do's to their own file.
-+ [ ] Workflows include *Poetry* `.env` plugin.
-+ [ ] Include proper `README.md` and populate it.
-+ [x] Add `LICENSE`
-+ [ ] Auto-add the `ci-cd.yaml` to the *CI/CD* page, and provide the annotation markers in the source file (if this counts as valid YAML).
-+ [ ] Update *Make* page for the changes to `Makefile`.
-+ [ ] Update *Pre-commit* page for the changes to `.pre-commit-config.yaml`.
-+ [ ] Check fonts: are there better choices?
-  + Source Code
-  + Rubik
-  + Inter
-  + Karla
-  + Other
-+ [ ] Fix versioning appearance on page.
-+ [ ] Write accompanying article on *LinkedIn*.
-
-## Closed
-
++ [x] Workflows include *Poetry* `.env` plugin.
++ [x] Add `LICENSE`.
 + [x] Include `Makefile` to setup project.
   + [x] Create template `Makefile`.
   + [x] Enable poetry env plugin.
