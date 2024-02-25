@@ -12,7 +12,7 @@ body:
       placeholder: "As **[the actor]**, I want **[the something]** so I can **[the goal]**."
     validations:
       required: true
-      
+
   - type: textarea
     id: criteria
     attributes:
@@ -22,7 +22,7 @@ body:
         - [ ]
     validations:
       required: false
-      
+
   - type: checkboxes
     id: contribute
     attributes:
