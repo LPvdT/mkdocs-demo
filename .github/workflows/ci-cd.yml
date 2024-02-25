@@ -49,6 +49,10 @@ jobs:
           curl -sSL ${{ env.POETRY_URL }} | python - --version ${{ env.POETRY_VERSION }}
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
+      - name: Install poetry-dotenv-plugin
+        run: |
+          poetry self add poetry-dotenv-plugin
+
       # Packages
       - name: Package caching
         uses: actions/cache@v3
