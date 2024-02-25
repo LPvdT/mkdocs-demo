@@ -8,13 +8,14 @@
 
 + [ ] Use workflows from [this repo](https://github.com/ajndkr/lanarky/blob/main/Makefile) as inspiration. Also:
   + [ ] `.pre-commit-config.yaml`
-  + [ ] `Makefile`
+  + [x] `Makefile`
   + [x] `ISSUE_TEMPLATE`
   + [x] Etc.
 + [x] Move these to-do's to their own file.
 + [ ] Include proper readme and populate it.
 + [x] Add `LICENSE`
-+ [ ] Auto-add the `ci-cd.yaml` to the *CI/CD* section, and provide the annotation markers in the source file (if this counts as valid YAML).
++ [ ] Auto-add the `ci-cd.yaml` to the *CI/CD* page, and provide the annotation markers in the source file (if this counts as valid YAML).
++ [ ] Update *Make* page for the changes to `Makefile`.
 + [ ] Check fonts.
 + [ ] Fix versioning.
 + [ ] Write accompanying article on LinkedIn.

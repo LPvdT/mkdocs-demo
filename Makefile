@@ -1,37 +1,37 @@
 default: help
 
-.PHONY: help
-help: # Show help for each recipe.
-	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
+.PHONY: all pkg-install pkg-update pc-install pc-update pc-run md-serve md-build
 
-.PHONY: all
+help: ## Show help for each recipe.
+	@echo "Usage:\n\tmake <recipe>"
+	@echo "\nAvailable recipes:"
+	@awk 'BEGIN {FS = ":.*##"; } /^[$$()% a-zA-Z_-]+:.*?##/ \
+	{ printf "\t\033[36m%-30s\033[0m %s\n", $$1, $$2 } /^##@/ \
+	{ printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
+
 all: pkg-install pc-install pc-update
 
-.PHONY: pkg-install
-pkg-install: # Installs the project.
+# Package recipes
+pkg-install: ## Installs the project.
 	poetry install
 
-.PHONY: pkg-update
-pkg-update: pkg-install # Updates the project's dependencies to their latest versions.
+pkg-update: pkg-install ## Updates the project's dependencies to their latest versions.
 	poetry update
 
-.PHONY: pc-install
-pc-install: pkg-install # Installs the pre-commit hooks.
+# Pre-commit recipes
+pc-install: pkg-install ## Installs the pre-commit hooks.
 	poetry run pre-commit install
 
-.PHONY: pc-update
-pc-update: pc-install # Updates the pre-commit hooks to their latest version.
+pc-update: pc-install ## Updates the pre-commit hooks to their latest version.
 	poetry run pre-commit autoupdate
 
-.PHONY: pc-run
-pc-run: pc-install # Run pre-commit hooks on all files immediately.
+pc-run: pc-install ## Run pre-commit hooks on all files immediately.
 	poetry run pre-commit run --all-files
 
-.PHONY: md-serve
-md-serve: all # Run MkDocs' builtin development server.
+# MkDocs recipes
+md-serve: all ## Run MkDocs' builtin development server.
 	poetry run mkdocs serve --config-file src/mkdocs_demo/mkdocs.yml
 
-.PHONY: md-build
 .DELETE_ON_ERROR:
-md-build: all pkg-update # Build the MkDocs documentation.
+md-build: all pkg-update ## Build the MkDocs documentation.
 	poetry run mkdocs build --config-file src/mkdocs_demo/mkdocs.yml --clean --use-directory-urls
