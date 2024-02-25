@@ -1,29 +1,26 @@
 name: CI-CD
 
 on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request:
-    types: closed
-    branches:
-      - main
-      - master
   workflow_dispatch:
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main, master]
 
 permissions:
   contents: write
 
 env:
-  PYTHON_VERSION: "3.11"
-  POETRY_VERSION: "1.7.1"
+  PYTHON_VERSION: 3.11
+  POETRY_VERSION: 1.7.1
   POETRY_URL: https://install.python-poetry.org
 
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
     steps:
+      # Init
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -38,26 +35,33 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
+      # Poetry
       - name: Poetry caching
         uses: actions/cache@v3
         with:
           path: ~/.cache/pypoetry
-          key: poetry-cache-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ env.POETRY_VERSION }}
-
-      - name: Cache packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.local
-          key: poetry-local-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}-${{ hashFiles('.github/workflows/*.yml') }}
+          key: pypoetry-bin-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ env.POETRY_VERSION }}
+          restore-keys: |
+            pypoetry-bin-
 
       - name: Install Poetry ${{ env.POETRY_VERSION }}
         run: |
           curl -sSL ${{ env.POETRY_URL }} | python - --version ${{ env.POETRY_VERSION }}
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
+      # Packages
+      - name: Package caching
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/packages-local
+          key: packages-local-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}-${{ hashFiles('.github/workflows/*.yml') }}
+          restore-keys: |
+            packages-local-
+
       - name: Install dependencies
         run: poetry install --without test
 
+      # Deploy
       - name: Deploy site
         run: |
           poetry run \
@@ -67,12 +71,16 @@ jobs:
               --use-directory-urls \
               --force
 
-      # - name: Build release artifacts
-      #   run: poetry build
+      # Artifacts
+      - name: Build release artifacts
+        id: build_artifacts
+        run: |
+          poetry build -vf sdist
+          echo "targets=./dist/*" >> $GITHUB_OUTPUT
 
-      # - name: Upload release artifact
-      #   uses: AButler/upload-release-assets@v3.0
-      #   with:
-      #     files: "*.tar.gz"
-      #     repo-token: ${{ secrets.GITHUB_TOKEN }}
-      #     release-tag: "1.1"
+      - name: Upload release artifact
+        uses: AButler/upload-release-assets@v3.0
+        with:
+          files: ${{ steps.build_artifacts.outputs.targets }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          release-tag: "1.1"
