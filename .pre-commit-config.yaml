@@ -31,7 +31,7 @@ repos:
           - python
           - pyi
           - jupyter
-        args: [--fix, --exit-non-zero-on-fix]
+        args: [--fix]
       - id: ruff-format
         name: Ruff Formatter
         types_or:
